@@ -25,15 +25,9 @@ import (
 )
 
 var InitAgentMap = map[commons.ID]func() agent.Strategy{
-	// "RANDOM": example.NewRandomAgent,
-	// "TEAM1":  team1.NewSocialAgent,
-	// "TEAM2":  team2.NewAgent2,
 	"COLLECTIVE": team3.NewAgentThreeNeutral,
 	"SELFLESS":   team3.NewAgentThreePassive,
 	"SELFISH":    team3.NewAgentThreeAggressive,
-	// "TEAM5":  team5.NewAgent5,
-	// "TEAM6":  team6.NewTeam6Agent,
-	// "TEAM4":  team4.NewAgentFour,
 }
 
 var InitSurvivorMap = map[commons.ID]func(personality uint, experience uint) agent.Strategy{
@@ -100,7 +94,6 @@ func startGameLoop() {
 		leaderBeforeElection := globalState.CurrentLeader
 		if termLeft == 0 || !alive {
 			termLeft = runElection()
-			// fmt.Println(globalState.LeaderManifesto)
 			levelLog.ElectionStage = logging.ElectionStage{
 				Occurred: true,
 				Winner:   globalState.CurrentLeader,
@@ -135,7 +128,6 @@ func startGameLoop() {
 		*viewPtr = globalState.ToView()
 
 		// Battle Rounds
-		// TODO: Ambiguity in specification - do agents have a upper limit of rounds to try and slay the monster?
 		fightResultSlice := make([]decision.ImmutableFightResult, 0)
 		roundNum := uint(0)
 		for globalState.MonsterHealth != 0 {
