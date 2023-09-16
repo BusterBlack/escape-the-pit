@@ -9,6 +9,8 @@ logs/*.json
 .idea
 .DS_Store
 coverage.txt
+
+Data/*
 *.csv
 *.png
 *.json
