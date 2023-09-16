@@ -12,13 +12,13 @@ This work was initially developed by the SOMAS2022/3 cohort at Imperial College 
 
 ## Structure
 
-```
 Below is the main file structures, including the game play (playGame.py) and game learning (RLexplore.py).
+```
 agent.py - learning agent class
 game_env.py - game environment class
 ```
 
-- pkg
+pkg
   |-- experiments
       |-- playGame.py
       |-- RLexplore.py
