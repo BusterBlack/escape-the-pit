@@ -15,5 +15,6 @@ coverage.txt
 *.bash
 *.txt
 *.pyc
-
+*.h5
+*.index
 
