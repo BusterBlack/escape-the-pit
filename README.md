@@ -18,18 +18,24 @@ agent.py - learning agent class
 game_env.py - game environment class
 ```
 
-pkg
-  |-- experiments
-      |-- playGame.py
-      |-- RLexplore.py
-      |-- player
-          |-- agent.py
-          |-- game_env.py
-  |-- infra
-      |-- main.go
-      |-- main_helper.go
-      |-- game
-          
+```
+.
+├── cmd
+│   └── (Executable Outputs)
+├── pkg
+│   └── infra
+│       └── (Infrastructure Implementation)
+|       └── teams
+|           └── (MAS Agent)
+│   └── experiments
+│       └── RLexplore.py
+│       └── playGame.py
+|       └── player
+|           └── agent.py (Learning Agent Class)
+|           └── game_env.py (Game Environment Class)
+├── .env (Environmental variables for Infrastructure)
+```
+
 
 ## Quick Start
 
