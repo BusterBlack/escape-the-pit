@@ -1,5 +1,6 @@
 # Escape The Pit - Game Self-Organising Multi-Agent System Evironment
 
+This work was initially developed by the SOMAS2022/3 cohort at Imperial College London - https://github.com/SOMAS2022
 
 ## Programming Language
 
