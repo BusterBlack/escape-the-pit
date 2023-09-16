@@ -72,9 +72,8 @@ for e in tqdm(range(eps)):
     if (e+1) % 5 == 0:
         print("End of Episode {}/{}, Score: {}, Epsilon: {:.2}, Avg Score Over Last 50 Eps: {:.2f}"
             .format(e+1, eps, total_reward, agent.epsilon, ep_reward_avg))
-    if (e+1) % 50 == 0:
-        pd.DataFrame(output).to_csv(f"./output/RL_gameOutput_{run}_{e+1}.csv", index=False)
     if (e+1) % 100 == 0:
+        pd.DataFrame(output).to_csv(f"./output/RL_gameOutput_{run}_{e+1}.csv", index=False)
         pd.DataFrame(output).to_csv("./output/gameOutput.csv", index=False)
         visualise.plotAll()
     

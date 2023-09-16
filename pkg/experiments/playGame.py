@@ -70,52 +70,14 @@ def main(arg) -> int:
             print(f"Total Points: {points}")
             print("================================")
     
-    # print("============ GAME ENDS ===========")
-    # print(f"Your Total Score: {points}")
-    return points
+    print("============ GAME ENDS ===========")
+    print(f"Your Total Score: {points}")
+    
 
-    # pd.DataFrame(output).to_csv("./output/gameOutput.csv", index=False)
+    pd.DataFrame(output).to_csv("./output/gameOutput.csv", index=False)
 
-    # visualise.plotAll()
+    visualise.plotAll()
     
 if __name__ == "__main__":
-    # arg = sys.argv[1:]
-    # main(arg)
-    totalPoints = 0
-    totalAlive = 0
-    for i in tqdm(range(30)):
-        points = main(["predict", "False"])
-        totalPoints += points
-        with open("./output/survivorsTrack.json") as json_data:
-            data = json.load(json_data)
-            survivors = pd.DataFrame(data)
-        agents = survivors.columns
-        totalAlive += len(agents)
-    print("ALIVE:", (totalAlive/30))
-    print("PREDICTED:", (totalPoints/30))
-
-    totalPoints = 0
-    totalAlive = 0
-    for i in tqdm(range(30)):
-        points = main(["random", "False"])
-        totalPoints += points
-        with open("./output/survivorsTrack.json") as json_data:
-            data = json.load(json_data)
-            survivors = pd.DataFrame(data)
-        agents = survivors.columns
-        totalAlive += len(agents)
-    print("ALIVE:", (totalAlive/30))
-    print("RANDOM:", (totalPoints/30))
-
-    totalPoints = 0
-    totalAlive = 0
-    for i in tqdm(range(30)):
-        points = main(["fixed", "False"])
-        totalPoints += points
-        with open("./output/survivorsTrack.json") as json_data:
-            data = json.load(json_data)
-            survivors = pd.DataFrame(data)
-        agents = survivors.columns
-        totalAlive += len(agents)
-    print("ALIVE:", (totalAlive/30))
-    print("FIXED:", (totalPoints/30))
+    arg = sys.argv[1:]
+    main(arg)

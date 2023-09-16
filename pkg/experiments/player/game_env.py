@@ -121,6 +121,14 @@ class escapeThePitEnv:
     def testStep(self, newAgents: int, model: Sequential) -> Tuple[np.ndarray, int, bool]:
         """
         Take step with random actions
+        ------------------------------
+        @args:
+            newAgents (int): number of new agents (action sum)
+            model (Sequential): ml model used for prediction
+        @returns:
+            survivedAgents : contruction of surviving population (state)
+            progress : level reached (reward)
+            done : true if game has finished
         """
 
         if self.counter == 1:
@@ -178,12 +186,12 @@ class escapeThePitEnv:
         # reset the counter and done values
         self.done = False
         self.counter = 1 
-        self.state = np.array([np.array([36,0,0]).astype(int)])
+        self.state = np.array([np.array([36,0,0]).astype(int)])  # reset the state for initial "survivor population"
         # change the .env file START to true
         dotenv_file = dotenv.find_dotenv()
         dotenv.load_dotenv(dotenv_file)
         eh.setenv("START", True, dotenv_file)
-        survivors = "{}"
+        survivors = "{}"   # reset the survivors output
         with open("./output/survivors.json", "w") as json_file:
             json_file.write(survivors)
 

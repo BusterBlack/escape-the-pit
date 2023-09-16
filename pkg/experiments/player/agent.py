@@ -63,7 +63,6 @@ class agent:
         # model.add(BatchNormalization())
         model.add(Dense(1))
         # compile the model
-        # model.compile(loss='mse', optimizer=Adam(learning_rate=self.learning_rate))
         optimizer = Adam(learning_rate=self.learning_rate)
         # optimizer = SGD(learning_rate=self.learning_rate)
         model.compile(loss='mse', optimizer=optimizer)
@@ -191,7 +190,6 @@ class agent:
         ############################
 
         # train the model
-        # self.model.fit(batch_state_action, target_q_values, verbose="0", batch_size=32)
         self.model.train_on_batch(batch_state_action, target_q_values)
         # update epsilon
         if self.epsilon > self.epsilon_min:
